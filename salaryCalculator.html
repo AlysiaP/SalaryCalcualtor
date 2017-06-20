@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salary Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div style="float: left;">
+		<table class="table">
+			<tbody>
+				<tr>
+					<td>Annual Rate $</td>
+					<td><input min="0.00" name="AnnualRate" step="1000" type="number" value="0"></td>
+					<td>Allocation $</td>
+					<td><input class="results" disabled="disabled" name="Allocation" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td>Basis Periods</td>
+					<td><select name="BasisPeriods">
+						<option>
+							12
+						</option>
+						<option>
+							9
+						</option>
+						<option>
+							3
+						</option>
+					</select></td>
+					<td>Monthly Salary $</td>
+					<td><input class="results" disabled="disabled" name="MonthlySalary" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td>Hours Per Week</td>
+					<td><input min="0" name="HoursPerWeek" type="number" value="0"></td>
+					<td>Pct Time</td>
+					<td><input class="results" disabled="disabled" max="100.00" min="0.00" name="PctTime" readonly="readonly" type="number"> %</td>
+				</tr>
+				<tr>
+					<td>Begin Date</td>
+					<td><input name="BeginDate" placeholder="mm/dd/yyyy" type="date"></td>
+					<td>FTE (weekly)</td>
+					<td><input class="results" disabled="disabled" name="FTE" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td>End Date</td>
+					<td><input name="EndDate" placeholder="mm/dd/yyyy" type="date"></td>
+					<td>FTE (yearly)</td>
+					<td><input class="results" disabled="disabled" name="FTEyearly" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td># of Workdays</td>
+					<td><input class="results" disabled="disabled" name="NumberOfWorkDays" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>Calc'd Hrs/Week</td>
+					<td><input class="results" disabled="disabled" name="CalculatedHoursPerWeek" readonly="readonly" type="number"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>Hourly Rate</td>
+					<td><input class="results" disabled="disabled" name="HourlyRate" readonly="readonly" type="number"></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<div align="center">
+			<button onclick="getRates()" type="button">Get Rates</button> <button onclick="resetFields()" type="button">Reset</button>
+		</div>
+	</div>
+	<div style="float: left; clear: both;">
+		<ul>
+			<li>Fill out the left side of the table with the appropriate values.</li>
+			<li>Note: The date fields are required.</li>
+			<li>Click the Get Rates button to populate the right side of the table.</li>
+			<li>Click the Reset button to reset the calculator to default values.</li>
+			<li>Note: If you are using Internet Explorer, click the Allow Blocked Content button to allow the script to execute.</li>
+		</ul>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
