@@ -38,18 +38,11 @@ function annualRtMonthlySalary(annualRt, basisPeriods, hrsPerWeek)
 	return (hrsPerWeek/40)*(annualRt/basisPeriods);
 }
 
-
-//posting hrs per week for report
-function calcHrsPerWeek(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt)
-{
-	return hrsPerWeek;
-}
-
 //calculating hourly rate with annual rate, basis period, hrs per week, etc.
 function hourlyRate(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt)
 {
 	var all = allocation(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt);
-	var hrsCal = calcHrsPerWeek(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt);
+	var hrsCal = hrsPerWeek;
 	return hrsCal == 0 ? 0 : ((all/(Math.round(((netWorkDays(beginDt, endDt)*8)/40)*10)/10))/hrsCal);
 }
 
@@ -134,7 +127,6 @@ function getRates()
 	document.getElementsByName("FTE")[0].value = FTE(hrsPerWeek);
 	document.getElementsByName("FTEyearly")[0].value = Math.round(FTEYearly(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt)*10000)/10000;
 	document.getElementsByName("NumberOfWorkDays")[0].value = netWorkDays(beginDt, endDt);
-	document.getElementsByName("CalculatedHoursPerWeek")[0].value = Math.round(calcHrsPerWeek(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt)*10000)/10000;
 	document.getElementsByName("HourlyRate")[0].value = Math.round(hourlyRate(annualRt, basisPeriods, hrsPerWeek, beginDt, endDt)*100)/100;
 }
 
